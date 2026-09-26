@@ -3,7 +3,7 @@
 kuma757 の自己紹介サイトです。
 
 - **フレームワーク**: [Astro](https://astro.build/)（静的出力）
-- **デザイン**: simpliesbot-tts-v2.pages.dev を参考にしたダークテーマ（図形レス・罫線＋番号構成）
+- **デザイン**: ダーク × アンバーアクセントのオリジナルデザイン（カードベース / Space Grotesk）
 - **ホスティング**: Cloudflare Pages
 
 ## 構成
@@ -14,7 +14,7 @@ kuma757 の自己紹介サイトです。
 │   ├── favicon.svg
 │   └── robots.txt
 ├── src/
-│   ├── components/       # Header / Footer / CopyField
+│   ├── components/       # Header / Footer
 │   ├── layouts/          # BaseLayout（メタ・フォント・クライアントスクリプト）
 │   ├── pages/            # index.astro
 │   └── styles/           # global.css（デザインシステム）
@@ -92,6 +92,7 @@ npx wrangler pages deploy dist --project-name kuma757-profile
 - プロフィール・プロジェクト・リンクの文言: `src/pages/index.astro`
 - 配色・レイアウト: `src/styles/global.css`（トークンは `:root` に定義）
 - メタ情報（OGP / Twitter Card）: `src/layouts/BaseLayout.astro`
+- Discord プロフィールリンク: `src/pages/index.astro` の `DISCORD_URL`（`https://discord.com/users/1125045664821289030`）
 
 ## ライセンス
 

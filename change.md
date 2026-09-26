@@ -42,4 +42,22 @@
 - 公開先: https://github.com/kuma757/kuma757-profile
 - `bun.lock` はコミット対象外に設定（`.gitignore` に追記）
   - Cloudflare Pages のビルドは npm でインストールするため、Bun のロックファイルは不要
-- 初回プッシュは GitHub API（MCP）経由で実施し、コミットは認証ユーザー（kuma757）で記録
+- 初回プッシュは GitHub API（MCP）経由を試行したが、空リポジトリには初回コミットを作成できない
+  制約のため、SSH 経由の git CLI で初回コミットを作成して push
+
+### デザイン全面リニューアル / Discord リンク変更
+
+- **変更内容**: 参照サイト（simpliesbot-tts-v2.pages.dev）の構成踏襲をやめ、オリジナルデザインに刷新
+- **変更理由**: ユーザー指定（「がっちがっちに参考にしなくていい」「もっといい感じに」）
+- **デザイン変更**:
+  - ダーク × アンバー（`#fbbf24`）アクセントのカードベース構成
+  - グラスモーフィズムのスティッキーヘッダー（backdrop-filter）
+  - ヒーローにアンバーのラジアルグロー、Space Grotesk のディスプレイフォント
+  - プロフィールカード / 情報リスト / プロジェクトカード（タグ付き）/ リンクタイル
+- **Discord リンク変更**:
+  - ユーザー名コピーボタンを廃止し、`https://discord.com/users/1125045664821289030` へのリンクに変更
+  - `CopyField.astro` コンポーネントを削除、コピー用スクリプトを削除
+- **依存整理**: Google Material Symbols を廃止し、インライン SVG アイコンに置換（外部依存を削減）
+- **SEO**: JSON-LD の `sameAs` に Discord プロフィール URL を追加
+- **影響範囲**: `src/styles/global.css`（全面）/ `src/pages/index.astro` / `Header` / `Footer` /
+  `BaseLayout` / `public/favicon.svg` / ドキュメント類

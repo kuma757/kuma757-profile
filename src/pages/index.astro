@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CopyField from '../components/CopyField.astro';
 
 const pageTitle = 'kuma757 | Discord Bot 開発者 / Web 開発者';
 const pageDescription =
   'kuma757 のプロフィール。Discord Bot や Web サービスの開発・運用を行っています。Discord 読み上げ Bot「SimpliesBot TTS」と Minecraft 国家 RP サーバー「KumaEarth」を開発・運営しています。';
+
+const DISCORD_URL = 'https://discord.com/users/1125045664821289030';
+const X_URL = 'https://x.com/kuma757_dev';
+const KUMAEARTH_URL = 'https://kumaearth.net/';
+const SIMPLIES_URL = 'https://simpliesbot-tts.kuma757.dev/';
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -18,6 +22,7 @@ const pageDescription =
       "description": "Discord Bot と Web サービスの開発・運用を行っている開発者。SimpliesBot TTS と KumaEarth を開発・運営。",
       "sameAs": [
         "https://x.com/kuma757_dev",
+        "https://discord.com/users/1125045664821289030",
         "https://kumaearth.net/",
         "https://simpliesbot-tts.kuma757.dev/"
       ]
@@ -28,18 +33,24 @@ const pageDescription =
   <section class="hero" id="top">
     <div class="container hero-inner">
       <p class="eyebrow">Discord Bot 開発者 / Web 開発者</p>
-      <h1>kuma757</h1>
+      <h1>kuma757<span class="accent">.</span></h1>
       <p class="hero-desc">
-        Discord Bot や Web サービスの開発・運用を行っています。Discord 読み上げ Bot「SimpliesBot
-        TTS」や、Minecraft 国家 RP サーバー「KumaEarth」の開発・運営をはじめ、気になったものを形にしています。
+        Discord Bot や Web サービスの開発・運用を行っています。<strong>Discord 読み上げ Bot「SimpliesBot
+        TTS」</strong>や、<strong>Minecraft 国家 RP サーバー「KumaEarth」</strong>の開発・運営をはじめ、
+        気になったものを形にしています。
       </p>
       <div class="hero-actions">
-        <a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary">X をフォロー</a>
+        <a href={X_URL} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"></path>
+          </svg>
+          X をフォロー
+        </a>
         <a href="#projects" class="btn btn-secondary">プロジェクトを見る</a>
       </div>
       <div class="hero-links">
-        <a href="https://simpliesbot-tts.kuma757.dev/" target="_blank" rel="noopener noreferrer">simpliesbot-tts.kuma757.dev</a>
-        <a href="https://kumaearth.net/" target="_blank" rel="noopener noreferrer">kumaearth.net</a>
+        <a href={KUMAEARTH_URL} target="_blank" rel="noopener noreferrer">kumaearth.net</a>
+        <a href={SIMPLIES_URL} target="_blank" rel="noopener noreferrer">simpliesbot-tts.kuma757.dev</a>
       </div>
     </div>
   </section>
@@ -48,51 +59,106 @@ const pageDescription =
   <section class="section section-soft" id="profile">
     <div class="container">
       <div class="section-head">
+        <p class="kicker">Profile</p>
         <h2>プロフィール</h2>
-        <p>個人でサービスを作り、開発・運用まで一貫して行っています。Discord Bot と Web サービスが主な活動です。</p>
+        <p class="lead">
+          個人でサービスを作り、開発・運用まで一貫して行っています。Discord Bot と Web サービスが主な活動です。
+        </p>
       </div>
-      <div class="grid grid-2">
-        <div class="card-line">
-          <h3>名前</h3>
-          <p>kuma757</p>
+
+      <div class="profile-grid">
+        <div class="profile-card">
+          <div class="profile-top">
+            <div class="avatar">
+              <img src="/favicon.svg" alt="kuma757 のロゴ" width="64" height="64" />
+            </div>
+            <div>
+              <h3>kuma757</h3>
+              <p class="role">
+                <span class="status-dot" aria-hidden="true"></span>
+                Discord Bot 開発者 / Web 開発者
+              </p>
+            </div>
+          </div>
+          <p class="profile-bio">
+            Discord Bot や Web サービスの開発・運用を中心に、個人でサービスを立ち上げています。
+            読み上げ Bot「<strong>SimpliesBot TTS</strong>」と Minecraft の国家 RP サーバー「<strong>KumaEarth</strong>」を
+            開発・運営。作るだけでなく、動かし続けるところまでを大切にしています。
+          </p>
         </div>
-        <div class="card-line" data-copy-field>
-          <h3>Discord</h3>
-          <CopyField value="kuma757" />
-        </div>
-        <div class="card-line">
-          <h3>X（旧 Twitter）</h3>
-          <p><a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="inline-link">@kuma757_dev</a></p>
-        </div>
-        <div class="card-line">
-          <h3>主な活動</h3>
-          <p>Discord Bot / Web サービスの開発・運用、Minecraft サーバー運営</p>
-        </div>
+
+        <dl class="info-list">
+          <div class="info-row">
+            <dt>名前</dt>
+            <dd><span class="info-value">kuma757</span></dd>
+          </div>
+          <div class="info-row">
+            <dt>Discord</dt>
+            <dd>
+              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" class="info-value">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true">
+                  <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.66-10.85,68.43,68.43,0,0,1-10.51-5c.88-.65,1.73-1.34,2.54-2a75.57,75.57,0,0,0,72.93,0c.81.71,1.66,1.4,2.54,2a68.41,68.41,0,0,1-10.51,5,74.37,74.37,0,0,0,6.66,10.85,105.73,105.73,0,0,0,31-18.83C129.81,49.12,123.4,26.46,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"></path>
+                </svg>
+                kuma757
+              </a>
+            </dd>
+          </div>
+          <div class="info-row">
+            <dt>X（旧 Twitter）</dt>
+            <dd>
+              <a href={X_URL} target="_blank" rel="noopener noreferrer" class="info-value">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"></path>
+                </svg>
+                @kuma757_dev
+              </a>
+            </dd>
+          </div>
+          <div class="info-row">
+            <dt>主な活動</dt>
+            <dd><span class="info-value">Discord Bot / Web サービスの開発・運用</span></dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
 
   <!-- プロジェクト -->
-  <section class="section border-top" id="projects">
+  <section class="section" id="projects">
     <div class="container">
       <div class="section-head">
+        <p class="kicker">Projects</p>
         <h2>プロジェクト</h2>
-        <p>開発・運営しているプロジェクトです。どちらも個人で開発・運用しています。</p>
+        <p class="lead">開発・運営しているプロジェクトです。どちらも個人で開発・運用しています。</p>
       </div>
-      <div class="grid grid-2">
-        <a href="https://kumaearth.net/" target="_blank" rel="noopener noreferrer" class="project-card group">
-          <p class="num">01</p>
-          <h3>KumaEarth<span class="arrow" aria-hidden="true">→</span></h3>
-          <p>地球を舞台にしたプレイヤー主導の国家 RP サーバー。Java・統合版クロスプレイ対応。</p>
-          <p class="url">kumaearth.net</p>
+
+      <div class="projects-grid">
+        <a href={KUMAEARTH_URL} target="_blank" rel="noopener noreferrer" class="project-card">
+          <span class="project-icon" aria-hidden="true">🌍</span>
+          <h3>KumaEarth<span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span></h3>
+          <p>地球を舞台にしたプレイヤー主導の国家 RP サーバー。Java・統合版クロスプレイに対応し、プレイヤーたちが国家を作り、世界を動かしていきます。</p>
+          <div class="project-tags">
+            <span class="tag">Minecraft</span>
+            <span class="tag">Java・統合版</span>
+            <span class="tag">国家 RP</span>
+          </div>
+          <p class="project-url">kumaearth.net</p>
         </a>
-        <a href="https://simpliesbot-tts.kuma757.dev/" target="_blank" rel="noopener noreferrer" class="project-card group">
-          <p class="num">02</p>
-          <h3>SimpliesBot TTS<span class="arrow" aria-hidden="true">→</span></h3>
-          <p>
-            Discord 読み上げ Bot。VOICEVOX / OpenJTalk による日本語読み上げに加え、話者・速度の個別設定、サーバー辞書、オートコネクトに対応。
-          </p>
-          <p class="url">simpliesbot-tts.kuma757.dev</p>
+
+        <a href={SIMPLIES_URL} target="_blank" rel="noopener noreferrer" class="project-card">
+          <span class="project-icon" aria-hidden="true">🔊</span>
+          <h3>SimpliesBot TTS<span class="arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span></h3>
+          <p>Discord 読み上げ Bot。VOICEVOX / OpenJTalk による日本語読み上げに加え、話者・速度の個別設定、サーバー辞書、オートコネクトに対応しています。</p>
+          <div class="project-tags">
+            <span class="tag">Discord Bot</span>
+            <span class="tag">読み上げ</span>
+            <span class="tag">VOICEVOX</span>
+          </div>
+          <p class="project-url">simpliesbot-tts.kuma757.dev</p>
         </a>
       </div>
     </div>
@@ -102,25 +168,62 @@ const pageDescription =
   <section class="section section-soft" id="links">
     <div class="container">
       <div class="section-head">
+        <p class="kicker">Links</p>
         <h2>リンク</h2>
-        <p>連絡やフォローは X（旧 Twitter）まで。「kuma757」の名前で各サービスで活動しています。</p>
+        <p class="lead">連絡やフォローは X（旧 Twitter）まで。「kuma757」の名前で各サービスで活動しています。</p>
       </div>
-      <div class="grid grid-2">
-        <a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="link-card group">
-          <h3>X（旧 Twitter）<span class="arrow" aria-hidden="true">→</span></h3>
-          <p>@kuma757_dev — 活動の告知や連絡はこちら</p>
+
+      <div class="links-grid">
+        <a href={X_URL} target="_blank" rel="noopener noreferrer" class="link-tile">
+          <span class="tile-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"></path></svg>
+          </span>
+          <span class="tile-body">
+            <span class="tile-label">X（旧 Twitter）</span>
+            <span class="tile-meta">@kuma757_dev — 活動の告知・連絡</span>
+          </span>
+          <span class="tile-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
         </a>
-        <div class="link-card link-card-static" data-copy-field>
-          <h3>Discord</h3>
-          <CopyField value="kuma757" />
-        </div>
-        <a href="https://kumaearth.net/" target="_blank" rel="noopener noreferrer" class="link-card group">
-          <h3>KumaEarth<span class="arrow" aria-hidden="true">→</span></h3>
-          <p>kumaearth.net — Minecraft 国家 RP サーバー</p>
+
+        <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" class="link-tile">
+          <span class="tile-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.66-10.85,68.43,68.43,0,0,1-10.51-5c.88-.65,1.73-1.34,2.54-2a75.57,75.57,0,0,0,72.93,0c.81.71,1.66,1.4,2.54,2a68.41,68.41,0,0,1-10.51,5,74.37,74.37,0,0,0,6.66,10.85,105.73,105.73,0,0,0,31-18.83C129.81,49.12,123.4,26.46,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"></path></svg>
+          </span>
+          <span class="tile-body">
+            <span class="tile-label">Discord</span>
+            <span class="tile-meta">kuma757 — プロフィールを開く</span>
+          </span>
+          <span class="tile-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
         </a>
-        <a href="https://simpliesbot-tts.kuma757.dev/" target="_blank" rel="noopener noreferrer" class="link-card group">
-          <h3>SimpliesBot TTS<span class="arrow" aria-hidden="true">→</span></h3>
-          <p>simpliesbot-tts.kuma757.dev — Discord 読み上げ Bot</p>
+
+        <a href={KUMAEARTH_URL} target="_blank" rel="noopener noreferrer" class="link-tile">
+          <span class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"></path></svg>
+          </span>
+          <span class="tile-body">
+            <span class="tile-label">KumaEarth</span>
+            <span class="tile-meta">kumaearth.net — Minecraft 国家 RP サーバー</span>
+          </span>
+          <span class="tile-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
+        </a>
+
+        <a href={SIMPLIES_URL} target="_blank" rel="noopener noreferrer" class="link-tile">
+          <span class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"></path></svg>
+          </span>
+          <span class="tile-body">
+            <span class="tile-label">SimpliesBot TTS</span>
+            <span class="tile-meta">simpliesbot-tts.kuma757.dev — Discord 読み上げ Bot</span>
+          </span>
+          <span class="tile-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
         </a>
       </div>
     </div>

@@ -42,12 +42,7 @@ const { title, description, lang = 'ja' } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Material Symbols（アイコン）。CSP の font-src / style-src で許可済み -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -92,71 +87,6 @@ const { title, description, lang = 'ja' } = Astro.props;
           setMenu(false);
           menuToggle?.focus();
         }
-      });
-
-      // ============================================================
-      // Discord ユーザー名のコピー
-      // ============================================================
-      const RESET_DELAY_MS = 2000;
-      const resetTimers = new WeakMap<HTMLElement, number>();
-
-      async function copyText(text: string): Promise<void> {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(text);
-          return;
-        }
-        // 非セキュアコンテキスト向けフォールバック
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.setAttribute('readonly', '');
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        const ok = document.execCommand('copy');
-        textarea.remove();
-        if (!ok) throw new Error('clipboard copy failed');
-      }
-
-      function showCopyFeedback(button: HTMLButtonElement, success: boolean): void {
-        const field = button.closest<HTMLElement>('[data-copy-field]');
-        const status = field?.querySelector<HTMLElement>('[data-copy-status]');
-        const icon = field?.querySelector<HTMLElement>('[data-copy-icon]');
-        const previousTimer = resetTimers.get(button);
-        if (previousTimer !== undefined) {
-          window.clearTimeout(previousTimer);
-        }
-
-        if (status) {
-          status.textContent = success ? 'コピーしました' : 'コピーできませんでした';
-          status.classList.toggle('is-error', !success);
-        }
-        if (icon) {
-          icon.textContent = success ? 'check' : 'error';
-        }
-        button.classList.toggle('is-success', success);
-
-        const timer = window.setTimeout(() => {
-          if (status) {
-            status.textContent = '';
-            status.classList.remove('is-error');
-          }
-          if (icon) {
-            icon.textContent = 'content_copy';
-          }
-          button.classList.remove('is-success');
-          resetTimers.delete(button);
-        }, RESET_DELAY_MS);
-        resetTimers.set(button, timer);
-      }
-
-      document.querySelectorAll<HTMLButtonElement>('[data-copy-value]').forEach((button) => {
-        button.addEventListener('click', () => {
-          const value = button.dataset.copyValue ?? '';
-          copyText(value)
-            .then(() => showCopyFeedback(button, true))
-            .catch(() => showCopyFeedback(button, false));
-        });
       });
     </script>
   </body>
