@@ -1,0 +1,25 @@
+---
+// Discord ユーザー名を表示し、クリックでコピーできるフィールド
+// コピー動作は BaseLayout のスクリプトが data 属性経由で制御する
+
+interface Props {
+  /** コピー対象の値（表示も兼ねる） */
+  value: string;
+}
+
+const { value } = Astro.props;
+---
+
+<div class="copy-row" data-copy-field>
+  <code class="copy-value">{value}</code>
+  <button
+    type="button"
+    class="copy-btn"
+    data-copy-value={value}
+    aria-label={`${value} をコピー`}
+    title="コピー"
+  >
+    <span class="material-symbols-outlined" data-copy-icon aria-hidden="true">content_copy</span>
+  </button>
+  <span class="copy-status" data-copy-status role="status" aria-live="polite"></span>
+</div>

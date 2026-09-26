@@ -1,0 +1,24 @@
+# 依存関係
+node_modules/
+
+# ビルド成果物
+dist/
+
+# Astro の生成物
+.astro/
+
+# ローカル開発用ロックファイル（Bun 使用時のみ生成）
+# Cloudflare Pages のビルドは npm で行うためコミット対象外
+bun.lock
+
+# ログ・環境
+*.log
+.env
+.env.*
+!.env.example
+
+# エディタ
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

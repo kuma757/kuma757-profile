@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CopyField from '../components/CopyField.astro';
+
+const pageTitle = 'kuma757 | Discord Bot 開発者 / Web 開発者';
+const pageDescription =
+  'kuma757 のプロフィール。Discord Bot や Web サービスの開発・運用を行っています。Discord 読み上げ Bot「SimpliesBot TTS」と Minecraft 国家 RP サーバー「KumaEarth」を開発・運営しています。';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <!-- JSON-LD 構造化データ -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "kuma757",
+      "alternateName": "kuma757_dev",
+      "description": "Discord Bot と Web サービスの開発・運用を行っている開発者。SimpliesBot TTS と KumaEarth を開発・運営。",
+      "sameAs": [
+        "https://x.com/kuma757_dev",
+        "https://kumaearth.net/",
+        "https://simpliesbot-tts.kuma757.dev/"
+      ]
+    }
+  </script>
+
+  <!-- ヒーロー -->
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <p class="eyebrow">Discord Bot 開発者 / Web 開発者</p>
+      <h1>kuma757</h1>
+      <p class="hero-desc">
+        Discord Bot や Web サービスの開発・運用を行っています。Discord 読み上げ Bot「SimpliesBot
+        TTS」や、Minecraft 国家 RP サーバー「KumaEarth」の開発・運営をはじめ、気になったものを形にしています。
+      </p>
+      <div class="hero-actions">
+        <a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="btn btn-primary">X をフォロー</a>
+        <a href="#projects" class="btn btn-secondary">プロジェクトを見る</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://simpliesbot-tts.kuma757.dev/" target="_blank" rel="noopener noreferrer">simpliesbot-tts.kuma757.dev</a>
+        <a href="https://kumaearth.net/" target="_blank" rel="noopener noreferrer">kumaearth.net</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- プロフィール -->
+  <section class="section section-soft" id="profile">
+    <div class="container">
+      <div class="section-head">
+        <h2>プロフィール</h2>
+        <p>個人でサービスを作り、開発・運用まで一貫して行っています。Discord Bot と Web サービスが主な活動です。</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card-line">
+          <h3>名前</h3>
+          <p>kuma757</p>
+        </div>
+        <div class="card-line" data-copy-field>
+          <h3>Discord</h3>
+          <CopyField value="kuma757" />
+        </div>
+        <div class="card-line">
+          <h3>X（旧 Twitter）</h3>
+          <p><a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="inline-link">@kuma757_dev</a></p>
+        </div>
+        <div class="card-line">
+          <h3>主な活動</h3>
+          <p>Discord Bot / Web サービスの開発・運用、Minecraft サーバー運営</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- プロジェクト -->
+  <section class="section border-top" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>プロジェクト</h2>
+        <p>開発・運営しているプロジェクトです。どちらも個人で開発・運用しています。</p>
+      </div>
+      <div class="grid grid-2">
+        <a href="https://kumaearth.net/" target="_blank" rel="noopener noreferrer" class="project-card group">
+          <p class="num">01</p>
+          <h3>KumaEarth<span class="arrow" aria-hidden="true">→</span></h3>
+          <p>地球を舞台にしたプレイヤー主導の国家 RP サーバー。Java・統合版クロスプレイ対応。</p>
+          <p class="url">kumaearth.net</p>
+        </a>
+        <a href="https://simpliesbot-tts.kuma757.dev/" target="_blank" rel="noopener noreferrer" class="project-card group">
+          <p class="num">02</p>
+          <h3>SimpliesBot TTS<span class="arrow" aria-hidden="true">→</span></h3>
+          <p>
+            Discord 読み上げ Bot。VOICEVOX / OpenJTalk による日本語読み上げに加え、話者・速度の個別設定、サーバー辞書、オートコネクトに対応。
+          </p>
+          <p class="url">simpliesbot-tts.kuma757.dev</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- リンク -->
+  <section class="section section-soft" id="links">
+    <div class="container">
+      <div class="section-head">
+        <h2>リンク</h2>
+        <p>連絡やフォローは X（旧 Twitter）まで。「kuma757」の名前で各サービスで活動しています。</p>
+      </div>
+      <div class="grid grid-2">
+        <a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="link-card group">
+          <h3>X（旧 Twitter）<span class="arrow" aria-hidden="true">→</span></h3>
+          <p>@kuma757_dev — 活動の告知や連絡はこちら</p>
+        </a>
+        <div class="link-card link-card-static" data-copy-field>
+          <h3>Discord</h3>
+          <CopyField value="kuma757" />
+        </div>
+        <a href="https://kumaearth.net/" target="_blank" rel="noopener noreferrer" class="link-card group">
+          <h3>KumaEarth<span class="arrow" aria-hidden="true">→</span></h3>
+          <p>kumaearth.net — Minecraft 国家 RP サーバー</p>
+        </a>
+        <a href="https://simpliesbot-tts.kuma757.dev/" target="_blank" rel="noopener noreferrer" class="link-card group">
+          <h3>SimpliesBot TTS<span class="arrow" aria-hidden="true">→</span></h3>
+          <p>simpliesbot-tts.kuma757.dev — Discord 読み上げ Bot</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

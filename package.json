@@ -1,0 +1,20 @@
+{
+  "name": "kuma757-profile",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "kuma757 の自己紹介サイト（Astro / Cloudflare Pages）",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^7.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "6"
+  }
+}

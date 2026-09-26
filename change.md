@@ -1,0 +1,45 @@
+# 変更履歴
+
+## 2026-09-27
+
+### サイト新規作成（kuma757 自己紹介サイト / Astro）
+
+- **変更内容**: kuma757 の自己紹介サイトを新規作成
+- **変更理由**: Cloudflare Pages でホストする自己紹介サイトとして新規立ち上げ
+- **影響範囲**: プロジェクト全体（新規）
+
+#### 実装内容
+
+- Astro（静的出力）で構成。ビルド不要の静的サイトとして Cloudflare Pages へデプロイ可能
+- 参考サイト（simpliesbot-tts-v2.pages.dev）のデザインを踏襲
+  - ダークテーマ（zinc 系カラーパレット / `#09090b` ベース）
+  - 図形レス構成（罫線＋番号によるセクション・カード）
+  - Inter / Noto Sans JP、Google Material Symbols
+  - スティッキーヘッダー（モバイルメニュー付き）
+- セクション構成: ヒーロー / プロフィール / プロジェクト（KumaEarth・SimpliesBot TTS）/ リンク / フッター
+- Discord ユーザー名「kuma757」のコピーボタン（クリップボード API + フォールバック）
+- SEO: JSON-LD（Person）、Open Graph、Twitter Card
+- セキュリティ: `public/_headers` で CSP・各種ヘッダーを適用
+
+#### 設定変更
+
+- `package.json` に npm scripts を定義（dev / build / preview / check）
+- `astro.config.mjs` で `vite.build.assetsInlineLimit: 0` を指定
+  - Astro が小さい `<script>` を HTML へ自動インライン化するため、CSP の `script-src 'self'` で
+    ブロックされないよう常に外部ファイルとして出力する
+
+#### デプロイ設定（Cloudflare Pages）
+
+- ビルドコマンド: `npm run build` / 出力ディレクトリ: `dist`
+
+#### 備考
+
+- 独自ドメイン決定後に `astro.config.mjs` の `site` を設定すること
+- ローカル環境に Node.js が無いため開発・検証は Bun で実施（本番ビルドは npm 前提）
+
+### GitHub リポジトリへの公開
+
+- 公開先: https://github.com/kuma757/kuma757-profile
+- `bun.lock` はコミット対象外に設定（`.gitignore` に追記）
+  - Cloudflare Pages のビルドは npm でインストールするため、Bun のロックファイルは不要
+- 初回プッシュは GitHub API（MCP）経由で実施し、コミットは認証ユーザー（kuma757）で記録
