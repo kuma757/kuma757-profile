@@ -61,3 +61,16 @@
 - **SEO**: JSON-LD の `sameAs` に Discord プロフィール URL を追加
 - **影響範囲**: `src/styles/global.css`（全面）/ `src/pages/index.astro` / `Header` / `Footer` /
   `BaseLayout` / `public/favicon.svg` / ドキュメント類
+
+### モノクロデザインへの刷新（白 × 黒のみ）
+
+- **変更内容**: カラー（アンバーアクセント・グロー・グラデーション）を全廃し、白 × 黒のみのモノクロ構成に変更
+- **変更理由**: ユーザー指定（「カラフル過ぎる・AI感がある。色は白と黒だけで統一」）
+- **デザイン変更**:
+  - 白背景 × 黒インク（`#0a0a0a`）のエディトリアル構成。グレーは中間諧調（`#f7f7f7` 等）のみ使用
+  - Space Grotesk を廃止し Inter / Noto Sans JP に統一、グロー・グラデーション・絵文字アイコンを全削除
+  - アイコンは白黒の線画 SVG に置換（リンクタイルはホバーで白黒反転）
+  - フッターを黒背景 × 白文字にし、白黒のコントラストで締める
+  - favicon を「黒背景 × 白の K」に変更
+- **影響範囲**: `src/styles/global.css`（全面）/ `src/pages/index.astro` /
+  `src/layouts/BaseLayout.astro` / `public/favicon.svg` / ドキュメント類
