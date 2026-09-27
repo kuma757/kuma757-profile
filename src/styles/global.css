@@ -1,21 +1,23 @@
 /* ==========================================================================
    kuma757 profile — グローバルスタイル
-   モノクロデザイン: 白背景 × 黒インク / エディトリアル構成
+   モノクロデザイン（ダーク）: 黒背景 × 白インク / エディトリアル構成
    ========================================================================== */
 
 :root {
   /* モノクロートークン（グレーは白黒の中間諧調） */
-  --color-bg: #ffffff;
-  --color-bg-soft: #f7f7f7;
-  --color-surface: #ffffff;
-  --color-surface-2: #f2f2f2;
-  --color-line: #e6e6e6;          /* ヘアライン */
-  --color-line-strong: #0a0a0a;   /* 黒罫線 */
-  --color-ink: #0a0a0a;
-  --color-ink-soft: #404040;
-  --color-muted: #6b6b6b;
-  --color-dim: #9a9a9a;
-  --color-on-ink: #ffffff;
+  --color-bg: #0a0a0a;
+  --color-bg-soft: #131313;
+  --color-surface: #101010;
+  --color-surface-2: #1a1a1a;
+  --color-line: rgba(255, 255, 255, 0.12); /* ヘアライン */
+  --color-line-strong: #ffffff;            /* 白罫線 */
+  --color-ink: #fafafa;
+  --color-ink-soft: #d4d4d4;
+  --color-muted: #9a9a9a;
+  --color-dim: #6b6b6b;
+  --color-on-ink: #0a0a0a;
+  --color-invert: #ffffff;
+  --color-invert-hover: #e6e6e6;
 
   /* フォント */
   --font-sans: 'Inter', 'Noto Sans JP', system-ui, -apple-system, sans-serif;
@@ -96,7 +98,7 @@ img {
 }
 
 ::selection {
-  background-color: var(--color-ink);
+  background-color: var(--color-invert);
   color: var(--color-on-ink);
 }
 
@@ -146,7 +148,7 @@ img {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--color-line);
-  background-color: rgba(255, 255, 255, 0.88);
+  background-color: rgba(10, 10, 10, 0.86);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -192,7 +194,7 @@ img {
   border-radius: var(--radius);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-ink-soft);
+  color: var(--color-muted);
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -208,7 +210,7 @@ img {
   margin-left: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
-  background-color: var(--color-ink);
+  background-color: var(--color-invert);
   color: var(--color-on-ink);
   font-size: 0.875rem;
   font-weight: 600;
@@ -217,7 +219,7 @@ img {
 }
 
 .nav-cta:hover {
-  background-color: #333333;
+  background-color: var(--color-invert-hover);
 }
 
 .menu-toggle {
@@ -261,7 +263,7 @@ img {
   border-radius: var(--radius);
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--color-ink-soft);
+  color: var(--color-muted);
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -275,7 +277,7 @@ img {
   margin-top: 0.75rem;
   padding: 0.625rem 0.75rem;
   border-radius: var(--radius);
-  background-color: var(--color-ink);
+  background-color: var(--color-invert);
   color: var(--color-on-ink);
   font-weight: 600;
   text-align: center;
@@ -283,7 +285,7 @@ img {
 }
 
 .mobile-cta:hover {
-  background-color: #333333;
+  background-color: var(--color-invert-hover);
 }
 
 @media (min-width: 768px) {
@@ -334,7 +336,7 @@ img {
   max-width: 40rem;
   font-size: 1.0625rem;
   line-height: 1.85;
-  color: var(--color-ink-soft);
+  color: var(--color-muted);
 }
 
 .hero-desc strong {
@@ -376,21 +378,21 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--color-ink);
+  background-color: var(--color-invert);
   color: var(--color-on-ink);
 }
 
 .btn-primary:hover {
-  background-color: #333333;
+  background-color: var(--color-invert-hover);
 }
 
 .btn-secondary {
-  border: 1px solid var(--color-ink);
+  border: 1px solid var(--color-line-strong);
   color: var(--color-ink);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-ink);
+  background-color: var(--color-invert);
   color: var(--color-on-ink);
 }
 
@@ -464,7 +466,7 @@ img {
   margin-top: 0.875rem;
   font-size: 0.9375rem;
   line-height: 1.85;
-  color: var(--color-ink-soft);
+  color: var(--color-muted);
 }
 
 /* --------------------------------------------------------------------------
@@ -499,7 +501,7 @@ img {
 .avatar {
   width: 4rem;
   height: 4rem;
-  border: 1px solid var(--color-ink);
+  border: 1px solid var(--color-line-strong);
   border-radius: 0.5rem;
   padding: 2px;
   background-color: var(--color-bg);
@@ -531,7 +533,7 @@ img {
   border-top: 1px solid var(--color-line);
   font-size: 0.9375rem;
   line-height: 1.9;
-  color: var(--color-ink-soft);
+  color: var(--color-muted);
 }
 
 .profile-bio strong {
@@ -624,8 +626,8 @@ a.info-value:hover {
 }
 
 .project-card:hover {
-  border-color: var(--color-ink);
-  background-color: var(--color-bg-soft);
+  border-color: var(--color-line-strong);
+  background-color: var(--color-surface-2);
   transform: translateY(-2px);
 }
 
@@ -635,7 +637,7 @@ a.info-value:hover {
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid var(--color-ink);
+  border: 1px solid var(--color-line-strong);
   border-radius: var(--radius);
   color: var(--color-ink);
 }
@@ -728,10 +730,10 @@ a.info-value:hover {
     color 0.15s ease, transform 0.15s ease;
 }
 
-/* ホバーで反転（黒背景 × 白文字） */
+/* ホバーで反転（白背景 × 黒文字） */
 .link-tile:hover {
-  background-color: var(--color-ink);
-  border-color: var(--color-ink);
+  background-color: var(--color-invert);
+  border-color: var(--color-invert);
   transform: translateY(-2px);
 }
 
@@ -789,7 +791,7 @@ a.info-value:hover {
 }
 
 .link-tile:hover .tile-icon {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.3);
   color: var(--color-on-ink);
 }
 
@@ -803,8 +805,8 @@ a.info-value:hover {
    -------------------------------------------------------------------------- */
 
 .site-footer {
-  border-top: 1px solid var(--color-line-strong);
-  background-color: var(--color-ink);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: #050505;
   color: var(--color-muted);
 }
 
@@ -828,7 +830,7 @@ a.info-value:hover {
 }
 
 .footer-brand .brand span {
-  color: var(--color-on-ink);
+  color: var(--color-ink);
 }
 
 .footer-brand .brand-icon {
@@ -839,7 +841,7 @@ a.info-value:hover {
   margin-top: 1rem;
   font-size: 0.875rem;
   line-height: 1.85;
-  color: #b3b3b3;
+  color: var(--color-muted);
 }
 
 .footer-social {
@@ -856,7 +858,7 @@ a.info-value:hover {
   height: 2.25rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius);
-  color: #d6d6d6;
+  color: var(--color-ink-soft);
   transition: background-color 0.15s ease, color 0.15s ease,
     border-color 0.15s ease;
 }
@@ -867,9 +869,9 @@ a.info-value:hover {
 }
 
 .social-btn:hover {
-  background-color: var(--color-on-ink);
-  border-color: var(--color-on-ink);
-  color: var(--color-ink);
+  background-color: var(--color-invert);
+  border-color: var(--color-invert);
+  color: var(--color-on-ink);
 }
 
 .site-footer nav {
@@ -881,7 +883,7 @@ a.info-value:hover {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #8a8a8a;
+  color: var(--color-dim);
 }
 
 .site-footer nav ul {
@@ -895,13 +897,13 @@ a.info-value:hover {
 
 .site-footer nav a {
   font-size: 0.875rem;
-  color: #d6d6d6;
+  color: var(--color-ink-soft);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .site-footer nav a:hover {
-  color: var(--color-on-ink);
+  color: var(--color-ink);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -926,5 +928,5 @@ a.info-value:hover {
 .footer-bottom p {
   margin: 0;
   font-size: 0.8125rem;
-  color: #8a8a8a;
+  color: var(--color-dim);
 }

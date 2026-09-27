@@ -74,3 +74,14 @@
   - favicon を「黒背景 × 白の K」に変更
 - **影響範囲**: `src/styles/global.css`（全面）/ `src/pages/index.astro` /
   `src/layouts/BaseLayout.astro` / `public/favicon.svg` / ドキュメント類
+
+### ダークモードをデフォルトに（黒背景 × 白文字へ反転）
+
+- **変更内容**: 白背景のライトテーマから、黒背景（`#0a0a0a`）のダークテーマへ反転
+- **変更理由**: ユーザー指定（「まぶしすぎて死ぬ」）
+- **デザイン変更**:
+  - 背景 `#0a0a0a` / 文字 `#fafafa`、グレーは中間諧調のみでモノクロを維持
+  - CTA・ボタン・リンクタイルの白黒反転を維持（ホバーでは白背景 × 黒文字）
+  - favicon（黒背景 × 白の K）はそのまま
+  - `theme-color` メタを `#0a0a0a` に設定（モバイルブラウザの UI もダークに）
+- **影響範囲**: `src/styles/global.css`（トークン・一部プロパティ）/ `src/layouts/BaseLayout.astro`
