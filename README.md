@@ -3,7 +3,7 @@
 kuma757 の自己紹介サイトです。
 
 - **フレームワーク**: [Astro](https://astro.build/)（静的出力）
-- **デザイン**: モノクロ（ダーク: 黒背景 × 白文字）のエディトリアルデザイン
+- **デザイン**: SimpliesBot TTS と揃えたミニマルなモノクロ（zinc ダーク）デザイン
 - **ホスティング**: Cloudflare Pages
 
 ## 構成
@@ -15,7 +15,7 @@ kuma757 の自己紹介サイトです。
 │   └── robots.txt
 ├── src/
 │   ├── components/       # Header / Footer
-│   ├── layouts/          # BaseLayout（メタ・フォント・クライアントスクリプト）
+│   ├── layouts/          # BaseLayout（メタ・クライアントスクリプト）
 │   ├── pages/            # index.astro
 │   └── styles/           # global.css（デザインシステム）
 ├── astro.config.mjs

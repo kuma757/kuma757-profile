@@ -1,5 +1,23 @@
 # 変更履歴
 
+## 2026-11-12
+
+### SimpliesBot TTS と統一したミニマルデザインに刷新
+
+- **変更内容**: SimpliesBot TTS（tts.simpliesbot.kuma757.dev）のデザインに合わせて全面刷新
+- **変更理由**: ユーザー指定（「このサイトと同じ感じで作ってくれ。パクってもらっていい。シンプルさを持ちたい」）
+- **デザイン変更**:
+  - zinc パレットのダークテーマ（`#09090b`）に統一。罫線と背景の切り替えでセクションを構成
+  - 角丸・影・装飾アイコンを廃止し、白のベタ塗りボタンと細い罫線のみに
+  - ヒーローを画面の高さいっぱいに配置（`100svh - ヘッダー高`、高さ 1200px 以上では 40rem で頭打ち）
+  - プロフィールを統計風の 4 項目（名前 / 活動 / プロジェクト / 連絡先）で表示
+  - プロジェクト・リンクは黒背景＋zinc 罫線のタイルに統一
+  - Web フォント（Inter / Noto Sans JP）の読み込みを廃止し、端末の日本語フォントに変更
+  - CSP から Google Fonts の許可を削除
+- **リンク修正**: SimpliesBot TTS の URL を正規の `https://tts.simpliesbot.kuma757.dev/` に変更
+- **影響範囲**: `src/styles/global.css` / `src/pages/index.astro` / `src/components/Header.astro` /
+  `src/components/Footer.astro` / `src/layouts/BaseLayout.astro` / `public/_headers` / ドキュメント類
+
 ## 2026-09-27
 
 ### サイト新規作成（kuma757 自己紹介サイト / Astro）

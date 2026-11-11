@@ -1,12 +1,13 @@
 ---
 // ヘッダー（スティッキー / モバイルメニュー付き）
 // 開閉動作は BaseLayout のスクリプトが data 属性経由で制御する
+const X_URL = 'https://x.com/kuma757_dev';
 ---
 
 <header class="site-header">
   <div class="container header-inner">
     <a href="#top" class="brand" aria-label="kuma757 トップへ">
-      <img src="/favicon.svg" alt="kuma757" width="28" height="28" class="brand-icon" />
+      <img src="/favicon.svg" alt="" width="28" height="28" />
       <span>kuma757</span>
     </a>
 
@@ -16,7 +17,7 @@
       <a href="#profile">プロフィール</a>
       <a href="#projects">プロジェクト</a>
       <a href="#links">リンク</a>
-      <a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="nav-cta">X をフォロー</a>
+      <a href={X_URL} target="_blank" rel="noopener noreferrer" class="nav-cta">X をフォロー</a>
     </nav>
 
     <!-- モバイルメニュートグル -->
@@ -44,7 +45,7 @@
       <a href="#profile">プロフィール</a>
       <a href="#projects">プロジェクト</a>
       <a href="#links">リンク</a>
-      <a href="https://x.com/kuma757_dev" target="_blank" rel="noopener noreferrer" class="mobile-cta">X をフォロー</a>
+      <a href={X_URL} target="_blank" rel="noopener noreferrer" class="mobile-cta">X をフォロー</a>
     </nav>
   </div>
 </header>
